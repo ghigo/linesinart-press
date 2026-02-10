@@ -1,11 +1,589 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lines in Art Press</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+
+  <title>Press | Lines in Art (Little Oaknut)</title>
+  <meta name="description"
+    content="Press resources and official updates for Lines in Art — a children's picture book that helps kids learn to look at real art through observation and play." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://linesinart.com/press" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Press | Lines in Art" />
+  <meta property="og:description"
+    content="Press resources and official updates for Lines in Art — a children's picture book that helps kids learn to look at real art through observation and play." />
+  <meta property="og:url" content="https://linesinart.com/press" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Press | Lines in Art" />
+  <meta name="twitter:description" content="Press resources and official updates for Lines in Art." />
+
+  <meta name="theme-color" content="#4356A6" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Organization",
+        "name":"Little Oaknut",
+        "url":"https://linesinart.com",
+        "email":"hello@linesinart.com",
+        "sameAs":[
+          "https://www.instagram.com/linesinartbook",
+          "https://www.facebook.com/profile.php?id=61579628001798",
+          "https://www.tiktok.com/@linesinart"
+        ],
+        "brand":{"@type":"Brand","name":"Lines in Art"}
+      },
+      {
+        "@type":"WebPage",
+        "name":"Press | Lines in Art",
+        "url":"https://linesinart.com/press",
+        "description":"Press resources and official updates for Lines in Art — a children's picture book that helps kids learn to look at real art through observation and play.",
+        "isPartOf":{"@type":"WebSite","name":"Lines in Art","url":"https://linesinart.com"}
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #FFFCFF;
+      /* Snow */
+      --ink: #111111;
+      --muted: #4a4a4a;
+      --border: rgba(17, 17, 17, .12);
+
+      --blue: #4356A6;
+      /* Ocean Twilight */
+      --orange: #FF8F00;
+      /* Deep Saffron */
+      --yellow: #FFBD05;
+      /* Amber Gold */
+      --green: #568203;
+      /* Forest Moss */
+
+      --max: 980px;
+      --pad: clamp(16px, 4vw, 28px);
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(17, 17, 17, .06);
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit
+    }
+
+    a:hover {
+      opacity: .86
+    }
+
+    .skip {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .skip:focus {
+      left: var(--pad);
+      top: var(--pad);
+      width: auto;
+      height: auto;
+      padding: 10px 12px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      z-index: 1000;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background:
+        linear-gradient(90deg,
+          rgba(67, 86, 166, .14),
+          rgba(255, 143, 0, .12),
+          rgba(255, 189, 5, .12),
+          rgba(86, 130, 3, .12));
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 26px var(--pad);
+    }
+
+    .top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: min(560px, 100%);
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(17, 17, 17, .7);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 3.2vw, 42px);
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+    }
+
+    .lead {
+      margin: 10px 0 0;
+      max-width: 70ch;
+      color: rgba(17, 17, 17, .82);
+      font-size: clamp(15px, 1.35vw, 18px);
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .75);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 1px 0 rgba(17, 17, 17, .03);
+      font-weight: 650;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .btn.primary {
+      border-color: rgba(67, 86, 166, .35);
+      background: rgba(67, 86, 166, .10);
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      display: inline-block;
+      background: var(--blue);
+    }
+
+    .btn.download .dot {
+      background: var(--green);
+    }
+
+    .btn.kick .dot {
+      background: var(--orange);
+    }
+
+    .btn.contact .dot {
+      background: var(--yellow);
+    }
+
+    .bar {
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--blue), var(--orange), var(--yellow), var(--green));
+      box-shadow: 0 6px 24px rgba(17, 17, 17, .08);
+      margin-top: 12px;
+    }
+
+    main {
+      padding: 22px 0 34px;
+    }
+
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, .78);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+
+    .muted {
+      color: rgba(17, 17, 17, .70);
+    }
+
+    .download-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 780px) {
+      .download-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .dl {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px;
+      background: rgba(255, 255, 255, .66);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .dl strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .dl small {
+      color: rgba(17, 17, 17, .64);
+      display: block;
+    }
+
+    .dl a {
+      flex: 0 0 auto;
+      text-decoration: none;
+      border: 1px solid rgba(86, 130, 3, .30);
+      background: rgba(86, 130, 3, .10);
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-weight: 650;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .copybox {
+      border: 1px dashed rgba(17, 17, 17, .18);
+      border-radius: 14px;
+      padding: 14px;
+      background: rgba(255, 255, 255, .65);
+      margin-top: 12px;
+    }
+
+    .label {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(17, 17, 17, .65);
+      margin-bottom: 8px;
+    }
+
+    .k {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 13px;
+      background: rgba(17, 17, 17, .06);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    /* Social section pills */
+    .social {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .social a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-weight: 650;
+      font-size: 14px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .70);
+      backdrop-filter: blur(4px);
+    }
+
+    .ico {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      display: inline-block;
+      background: rgba(17, 17, 17, .45);
+    }
+
+    .social a.instagram .ico {
+      background: var(--yellow);
+    }
+
+    .social a.facebook .ico {
+      background: var(--blue);
+    }
+
+    .social a.tiktok .ico {
+      background: var(--orange);
+    }
+
+    .updates {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .update {
+      padding: 12px 12px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, .66);
+    }
+
+    .update time {
+      display: block;
+      font-size: 12px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: rgba(17, 17, 17, .62);
+      margin-bottom: 6px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0 30px;
+      color: rgba(17, 17, 17, .70);
+      font-size: 14px;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Lines in Art Press</h1>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header>
+    <div class="wrap">
+      <div class="top">
+        <div class="brand">
+          <div class="eyebrow">Press</div>
+          <h1>Lines in Art</h1>
+          <p class="lead">
+            Press resources and official updates for <strong>Lines in Art</strong> — a children's picture book that
+            helps kids learn to look at real art through observation and play.
+          </p>
+          <div class="bar" aria-hidden="true"></div>
+        </div>
+
+        <nav aria-label="Primary">
+          <a class="btn download" href="/download" rel="nofollow">
+            <span class="dot" aria-hidden="true"></span>
+            Press kit / downloads
+          </a>
+
+          <a class="btn kick primary" href="https://www.kickstarter.com/projects/littleoaknut/lines-in-art?ref=press"
+            target="_blank" rel="noopener">
+            <span class="dot" aria-hidden="true"></span>
+            Kickstarter
+          </a>
+
+          <a class="btn contact" href="mailto:hello@linesinart.com">
+            <span class="dot" aria-hidden="true"></span>
+            hello@linesinart.com
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap stack">
+
+      <!-- Downloads (most important) -->
+      <section class="card" aria-label="Downloads">
+        <h2>Downloads</h2>
+        <p class="muted" style="margin:0">
+          The essentials, clearly labeled. Add the files in <strong>/download</strong> and link them below.
+        </p>
+
+        <div class="download-grid" role="list">
+          <div class="dl" role="listitem">
+            <div>
+              <strong>Press release (extended)</strong>
+              <small>Full story + details. PDF or DOCX.</small>
+            </div>
+            <a href="/download/press-release-extended.pdf">Download</a>
+          </div>
+
+          <div class="dl" role="listitem">
+            <div>
+              <strong>Press release (short)</strong>
+              <small>Quick version for listings. PDF or DOCX.</small>
+            </div>
+            <a href="/download/press-release-short.pdf">Download</a>
+          </div>
+
+          <div class="dl" role="listitem">
+            <div>
+              <strong>Press release (Italian)</strong>
+              <small>Comunicato stampa. PDF or DOCX.</small>
+            </div>
+            <a href="/download/press-release-it.pdf">Download</a>
+          </div>
+
+          <div class="dl" role="listitem">
+            <div>
+              <strong>One-page press sheet</strong>
+              <small>Fast overview + links. PDF.</small>
+            </div>
+            <a href="/download/press-sheet.pdf">Download</a>
+          </div>
+        </div>
+
+        <p class="muted" style="margin:14px 0 0">
+          Tip: keep filenames simple and consistent (no spaces), and use PDFs as the default format for journalists.
+        </p>
+      </section>
+
+      <!-- Social section (all social links moved here) -->
+      <section class="card" aria-label="Social">
+        <h2>Social</h2>
+        <p class="muted" style="margin:0">
+          Official channels for updates, behind-the-scenes, and launch reminders.
+        </p>
+
+        <div class="social">
+          <a class="instagram" href="https://www.instagram.com/linesinartbook" target="_blank" rel="noopener">
+            <span class="ico" aria-hidden="true"></span> Instagram
+          </a>
+          <a class="facebook" href="https://www.facebook.com/profile.php?id=61579628001798" target="_blank"
+            rel="noopener">
+            <span class="ico" aria-hidden="true"></span> Facebook
+          </a>
+          <a class="tiktok" href="https://www.tiktok.com/@linesinart" target="_blank" rel="noopener">
+            <span class="ico" aria-hidden="true"></span> TikTok
+          </a>
+        </div>
+      </section>
+
+      <!-- Boilerplate -->
+      <section class="card" aria-label="Boilerplate">
+        <h2>Boilerplate copy</h2>
+        <p class="muted" style="margin:0">
+          Copy/paste descriptions for articles, event pages, and newsletters.
+        </p>
+
+        <div class="copybox">
+          <div class="label"><span class="k">1–2 sentences</span></div>
+          <p style="margin:0">
+            <strong>Lines in Art</strong> is a children's picture book that invites kids to explore real artworks
+            through looking, noticing, and conversation—building visual thinking and creativity through simple prompts
+            and playful observation.
+          </p>
+        </div>
+
+        <div class="copybox">
+          <div class="label"><span class="k">~50 words</span></div>
+          <p style="margin:0">
+            <strong>Lines in Art</strong> helps young children build the habit of looking closely at art. Instead of
+            "explaining" paintings, the book offers simple prompts that encourage kids to notice details, make
+            connections, and share what they see—turning museum-looking into an at-home, read-together experience for
+            families and classrooms.
+          </p>
+        </div>
+
+        <div class="copybox">
+          <div class="label">About Little Oaknut</div>
+          <p style="margin:0">
+            <strong>Little Oaknut</strong> creates art-forward books for children—designed to spark curiosity,
+            conversation, and confidence in how kids think.
+          </p>
+        </div>
+      </section>
+
+      <!-- Updates -->
+      <section class="card" aria-label="Updates">
+        <h2>Updates</h2>
+        <p class="muted" style="margin:0">
+          Minimal updates will appear here over time.
+        </p>
+
+        <div class="updates">
+          <div class="update">
+            <time datetime="2026-03-05">March 5, 2026</time>
+            <div><strong>Kickstarter launch day.</strong> Follow along on Kickstarter for campaign updates.</div>
+          </div>
+          <div class="update">
+            <time datetime="2026-02-01">February 2026</time>
+            <div><strong>Press page live.</strong> Downloads and contact info available.</div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+      <div>© <span id="y">2026</span> Little Oaknut</div>
+      <div>
+        Press contact: <a href="mailto:hello@linesinart.com">hello@linesinart.com</a>
+        <span aria-hidden="true"> • </span>
+        <a href="https://www.kickstarter.com/projects/littleoaknut/lines-in-art?ref=press" target="_blank"
+          rel="noopener">Kickstarter</a>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("y").textContent = String(new Date().getFullYear());
+    </script>
+  </footer>
 </body>
+
 </html>
