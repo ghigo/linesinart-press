@@ -5,33 +5,40 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 
-  <title>Press | Lines in Art (Little Oaknut)</title>
+  <title>Press Kit & Downloads | Lines in Art (Little Oaknut)</title>
   <meta name="description"
-    content="Press resources and official updates for Lines in Art — a children's picture book that helps kids learn to look at real art through observation and play." />
+    content="Official press kit, downloads, and updates for Lines in Art — a children’s picture book that helps kids learn to look at real art through observation and play." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#4356A6" />
+
   <link rel="canonical" href="https://linesinart.com/press" />
+  <link rel="alternate" href="https://linesinart.com/press" hreflang="en" />
+  <link rel="alternate" href="https://linesinart.com/press" hreflang="x-default" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Press | Lines in Art" />
-  <meta property="og:description"
-    content="Press resources and official updates for Lines in Art — a children's picture book that helps kids learn to look at real art through observation and play." />
+  <meta property="og:site_name" content="Lines in Art" />
+  <meta property="og:title" content="Press Kit & Downloads | Lines in Art" />
+  <meta property="og:description" content="Official press kit, downloads, and updates for Lines in Art." />
   <meta property="og:url" content="https://linesinart.com/press" />
+  <!-- Optional: add when you have a share image -->
+  <!-- <meta property="og:image" content="https://press.linesinart.com/assets/og-press.jpg" /> -->
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Press | Lines in Art" />
-  <meta name="twitter:description" content="Press resources and official updates for Lines in Art." />
+  <meta name="twitter:title" content="Press Kit & Downloads | Lines in Art" />
+  <meta name="twitter:description" content="Official press kit, downloads, and updates for Lines in Art." />
+  <!-- Optional -->
+  <!-- <meta name="twitter:image" content="https://press.linesinart.com/assets/og-press.jpg" /> -->
 
-  <meta name="theme-color" content="#4356A6" />
-
-  <!-- Structured data -->
+  <!-- Structured data: Org + Site + Page + Book -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@graph":[
       {
         "@type":"Organization",
+        "@id":"https://linesinart.com/#org",
         "name":"Little Oaknut",
         "url":"https://linesinart.com",
         "email":"hello@linesinart.com",
@@ -43,11 +50,33 @@
         "brand":{"@type":"Brand","name":"Lines in Art"}
       },
       {
+        "@type":"WebSite",
+        "@id":"https://linesinart.com/#website",
+        "url":"https://linesinart.com",
+        "name":"Lines in Art",
+        "publisher":{"@id":"https://linesinart.com/#org"}
+      },
+      {
         "@type":"WebPage",
-        "name":"Press | Lines in Art",
+        "@id":"https://linesinart.com/press#webpage",
         "url":"https://linesinart.com/press",
-        "description":"Press resources and official updates for Lines in Art — a children's picture book that helps kids learn to look at real art through observation and play.",
-        "isPartOf":{"@type":"WebSite","name":"Lines in Art","url":"https://linesinart.com"}
+        "name":"Press Kit & Downloads | Lines in Art",
+        "description":"Official press kit, downloads, and updates for Lines in Art — a children’s picture book that helps kids learn to look at real art through observation and play.",
+        "isPartOf":{"@id":"https://linesinart.com/#website"},
+        "about":{"@id":"https://linesinart.com/#book"},
+        "inLanguage":"en"
+      },
+      {
+        "@type":"Book",
+        "@id":"https://linesinart.com/#book",
+        "name":"Lines in Art",
+        "publisher":{"@id":"https://linesinart.com/#org"},
+        "inLanguage":"en",
+        "audience":{
+          "@type":"Audience",
+          "audienceType":"Families and educators"
+        },
+        "about":"A children’s picture book that helps kids learn to look at real art through observation and play."
       }
     ]
   }
@@ -66,9 +95,16 @@
           <div class="eyebrow">Press</div>
           <h1>Lines in Art</h1>
           <p class="lead">
-            Press resources and official updates for <strong>Lines in Art</strong> — a children's picture book that
-            helps kids learn to look at real art through observation and play.
+            Official press kit and downloads for <strong>Lines in Art</strong> — a children’s picture book that helps
+            kids learn to look at real art through observation and play.
           </p>
+
+          <p class="subtle">
+            Press contact: <a href="mailto:hello@linesinart.com">hello@linesinart.com</a>
+            <span aria-hidden="true"> • </span>
+            <span class="muted">Last updated:</span> <time datetime="2026-02-13">Feb 13, 2026</time>
+          </p>
+
           <div class="bar" aria-hidden="true"></div>
         </div>
 
@@ -79,14 +115,14 @@
           </a>
 
           <a class="btn kick primary" href="https://www.kickstarter.com/projects/littleoaknut/lines-in-art?ref=press"
-            target="_blank" rel="noopener">
+            target="_blank" rel="noopener external">
             <span class="dot" aria-hidden="true"></span>
-            Kickstarter
+            Kickstarter (ref=press)
           </a>
 
           <a class="btn contact" href="mailto:hello@linesinart.com">
             <span class="dot" aria-hidden="true"></span>
-            hello@linesinart.com
+            Email
           </a>
         </nav>
       </div>
@@ -100,49 +136,86 @@
       <section class="card" aria-label="Downloads">
         <h2>Downloads</h2>
         <p class="muted" style="margin:0">
-          The essentials, clearly labeled. Add the files in <strong>/download</strong> and link them below.
+          Start with the complete press kit (recommended), or choose only images or press releases.
         </p>
 
         <div class="download-grid" role="list">
+
+          <!-- Complete press kit -->
           <div class="dl" role="listitem">
-            <div>
-              <strong>Press release (extended)</strong>
-              <small>Full story + details. PDF or DOCX.</small>
+            <div class="dl-meta">
+              <strong>Press Kit (Complete) — 2026</strong>
+              <small>Press releases + images + fact sheet + Kickstarter overview + creators bio.</small>
+              <small class="dl-path">/download/Lines_in_Art_Press_Kit_2026_Complete.zip</small>
             </div>
-            <a href="/download/press-release-extended.pdf">Download</a>
+            <div class="dl-actions">
+              <a class="dl-btn" href="/download/Lines_in_Art_Press_Kit_2026_Complete.zip" download>Download</a>
+              <a class="dl-link" href="/download/Lines_in_Art_Press_Kit_2026_Complete.zip" target="_blank"
+                rel="noopener">View</a>
+            </div>
           </div>
 
+          <!-- Images only -->
           <div class="dl" role="listitem">
-            <div>
-              <strong>Press release (short)</strong>
-              <small>Quick version for listings. PDF or DOCX.</small>
+            <div class="dl-meta">
+              <strong>Press Kit (Images) — 2026</strong>
+              <small>Cover + selected spreads + creator photos (HiRes + LowRes).</small>
+              <small class="dl-path">/download/Lines_in_Art_Press_Kit_2026_Images.zip</small>
             </div>
-            <a href="/download/press-release-short.pdf">Download</a>
+            <div class="dl-actions">
+              <a class="dl-btn" href="/download/Lines_in_Art_Press_Kit_2026_Images.zip" download>Download</a>
+              <a class="dl-link" href="/download/Lines_in_Art_Press_Kit_2026_Images.zip" target="_blank"
+                rel="noopener">View</a>
+            </div>
           </div>
 
+          <!-- Press releases only -->
           <div class="dl" role="listitem">
-            <div>
-              <strong>Press release (Italian)</strong>
-              <small>Comunicato stampa. PDF or DOCX.</small>
+            <div class="dl-meta">
+              <strong>Press Kit (Press Releases) — 2026</strong>
+              <small>Extended + short + Italian press release versions.</small>
+              <small class="dl-path">/download/Lines_in_Art_Press_Kit_2026_Press_Releases.zip</small>
             </div>
-            <a href="/download/press-release-it.pdf">Download</a>
+            <div class="dl-actions">
+              <a class="dl-btn" href="/download/Lines_in_Art_Press_Kit_2026_Press_Releases.zip" download>Download</a>
+              <a class="dl-link" href="/download/Lines_in_Art_Press_Kit_2026_Press_Releases.zip" target="_blank"
+                rel="noopener">View</a>
+            </div>
           </div>
 
-          <div class="dl" role="listitem">
-            <div>
-              <strong>One-page press sheet</strong>
-              <small>Fast overview + links. PDF.</small>
-            </div>
-            <a href="/download/press-sheet.pdf">Download</a>
-          </div>
         </div>
 
         <p class="muted" style="margin:14px 0 0">
-          Tip: keep filenames simple and consistent (no spaces), and use PDFs as the default format for journalists.
+          Tip: If you're on deadline, use <strong>Press Releases</strong>. If you only need visuals, use
+          <strong>Images</strong>.
         </p>
       </section>
 
-      <!-- Social section (all social links moved here) -->
+      <!-- Quick access PDFs (kept minimal for UX) -->
+      <section class="card" aria-label="Quick access PDFs">
+        <h2>Quick access PDFs</h2>
+        <p class="muted" style="margin:0">
+          Direct links to the most requested PDFs (no unzip).
+        </p>
+
+        <div class="copybox" style="margin-top:12px">
+          <ul style="margin:0; padding-left:18px">
+            <li><a href="/download/Lines_in_Art_PressRelease_Short.pdf" target="_blank" rel="noopener">Press release
+                (short) — PDF</a></li>
+            <li><a href="/download/Lines_in_Art_PressRelease_Extended.pdf" target="_blank" rel="noopener">Press release
+                (extended) — PDF</a></li>
+            <li><a href="/download/Lines_in_Art_ComunicatoStampa_IT.pdf" target="_blank" rel="noopener">Press release
+                (Italian) — PDF</a></li>
+            <li><a href="/download/Lines_in_Art_FactSheet.pdf" target="_blank" rel="noopener">Fact sheet — PDF</a></li>
+            <li><a href="/download/Lines_in_Art_Kickstarter_Overview.pdf" target="_blank" rel="noopener">Kickstarter
+                overview — PDF</a></li>
+            <li><a href="/download/Lines_in_Art_Creators_Bio.pdf" target="_blank" rel="noopener">Creators bio — PDF</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Social -->
       <section class="card" aria-label="Social">
         <h2>Social</h2>
         <p class="muted" style="margin:0">
@@ -150,14 +223,14 @@
         </p>
 
         <div class="social">
-          <a class="instagram" href="https://www.instagram.com/linesinartbook" target="_blank" rel="noopener">
+          <a class="instagram" href="https://www.instagram.com/linesinartbook" target="_blank" rel="noopener external">
             <span class="ico" aria-hidden="true"></span> Instagram
           </a>
           <a class="facebook" href="https://www.facebook.com/profile.php?id=61579628001798" target="_blank"
-            rel="noopener">
+            rel="noopener external">
             <span class="ico" aria-hidden="true"></span> Facebook
           </a>
-          <a class="tiktok" href="https://www.tiktok.com/@linesinart" target="_blank" rel="noopener">
+          <a class="tiktok" href="https://www.tiktok.com/@linesinart" target="_blank" rel="noopener external">
             <span class="ico" aria-hidden="true"></span> TikTok
           </a>
         </div>
@@ -173,7 +246,7 @@
         <div class="copybox">
           <div class="label"><span class="k">1–2 sentences</span></div>
           <p style="margin:0">
-            <strong>Lines in Art</strong> is a children's picture book that invites kids to explore real artworks
+            <strong>Lines in Art</strong> is a children’s picture book that invites kids to explore real artworks
             through looking, noticing, and conversation—building visual thinking and creativity through simple prompts
             and playful observation.
           </p>
@@ -183,7 +256,7 @@
           <div class="label"><span class="k">~50 words</span></div>
           <p style="margin:0">
             <strong>Lines in Art</strong> helps young children build the habit of looking closely at art. Instead of
-            "explaining" paintings, the book offers simple prompts that encourage kids to notice details, make
+            “explaining” paintings, the book offers simple prompts that encourage kids to notice details, make
             connections, and share what they see—turning museum-looking into an at-home, read-together experience for
             families and classrooms.
           </p>
@@ -211,8 +284,8 @@
             <div><strong>Kickstarter launch day.</strong> Follow along on Kickstarter for campaign updates.</div>
           </div>
           <div class="update">
-            <time datetime="2026-02-01">February 2026</time>
-            <div><strong>Press page live.</strong> Downloads and contact info available.</div>
+            <time datetime="2026-02-13">February 2026</time>
+            <div><strong>Press kit published.</strong> Press kits + quick-access PDFs available.</div>
           </div>
         </div>
       </section>
@@ -227,7 +300,7 @@
         Press contact: <a href="mailto:hello@linesinart.com">hello@linesinart.com</a>
         <span aria-hidden="true"> • </span>
         <a href="https://www.kickstarter.com/projects/littleoaknut/lines-in-art?ref=press" target="_blank"
-          rel="noopener">Kickstarter</a>
+          rel="noopener external">Kickstarter</a>
       </div>
     </div>
 
