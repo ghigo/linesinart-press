@@ -1102,6 +1102,21 @@
       setLanguage(lang);
     })();
 
+    // ── Forward UTM / ref params to all Kickstarter links ───────────
+    (function() {
+      var pageParams = new URLSearchParams(window.location.search);
+      if (!pageParams.toString()) return;
+      document.querySelectorAll('a[href*="kickstarter.com"]').forEach(function(a) {
+        var url = new URL(a.href);
+        pageParams.forEach(function(value, key) {
+          if (!url.searchParams.has(key)) {
+            url.searchParams.set(key, value);
+          }
+        });
+        a.href = url.toString();
+      });
+    })();
+
     // ── Scroll reveal via IntersectionObserver ──────────────────────
     (function() {
       var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
