@@ -104,7 +104,7 @@
           "suggestedMaxAge": 8
         },
         "about": "A children's picture book that teaches kids to observe and engage with real art masterpieces by Van Gogh, Mondrian, Picasso, Matisse, Kandinsky, and Miró through play and guided looking.",
-        "award": "5-star review, Readers' Favorite Annual Book Award Contest",
+        "award": ["Kickstarter Project We Love", "5-star review, Readers' Favorite Annual Book Award Contest"],
         "offers": {
           "@type": "Offer",
           "url": "https://www.kickstarter.com/projects/littleoaknut/lines-in-art",
@@ -322,9 +322,13 @@
     /* ─── Recognition ────────────────────────────────────────────────── */
     #recognition { padding: 88px 0; }
     #recognition h2 { margin-bottom: 48px; }
+    .recognition-cards { display: flex; flex-direction: column; gap: 20px; }
     .recognition-card {
       background: var(--cream); border-radius: 4px; padding: 36px 40px;
       display: flex; gap: 24px; align-items: flex-start; max-width: 740px;
+    }
+    .recognition-card.highlight {
+      border-left: 4px solid var(--blue);
     }
     .recognition-icon { font-size: 36px; flex-shrink: 0; }
     .recognition-text h3 { font-size: 20px; margin-bottom: 8px; }
@@ -677,18 +681,36 @@
           data-en="Early praise"
           data-it="Primi riconoscimenti">Early praise</h2>
 
-        <div class="recognition-card reveal">
-          <span class="recognition-icon" aria-hidden="true">⭐</span>
-          <div class="recognition-text">
-            <h3 data-en="Readers' Favorite Annual Book Award Contest — 5 stars"
-                data-it="Readers' Favorite Annual Book Award Contest — 5 stelle">
-              Readers' Favorite Annual Book Award Contest — 5 stars
-            </h3>
-            <p data-en="Lines in Art received a 5-star review from the Readers' Favorite Annual Book Award Contest before its Kickstarter launch."
-               data-it="Lines in Art ha ricevuto una recensione di 5 stelle dal Readers' Favorite Annual Book Award Contest prima del lancio su Kickstarter.">
-              Lines in Art received a 5-star review from the Readers' Favorite Annual Book Award Contest before its Kickstarter launch.
-            </p>
+        <div class="recognition-cards">
+
+          <div class="recognition-card highlight reveal">
+            <span class="recognition-icon" aria-hidden="true">🏅</span>
+            <div class="recognition-text">
+              <h3 data-en="Kickstarter — Project We Love"
+                  data-it="Kickstarter — Project We Love">
+                Kickstarter — Project We Love
+              </h3>
+              <p data-en="Lines in Art was selected as a &ldquo;Project We Love&rdquo; by Kickstarter — a designation awarded by the Kickstarter team to projects they find exceptional — before the campaign even launched."
+                 data-it="Lines in Art è stato selezionato come &ldquo;Project We Love&rdquo; da Kickstarter — un riconoscimento assegnato dal team di Kickstarter ai progetti che trovano eccezionali — ancora prima del lancio della campagna.">
+                Lines in Art was selected as a &ldquo;Project We Love&rdquo; by Kickstarter — a designation awarded by the Kickstarter team to projects they find exceptional — before the campaign even launched.
+              </p>
+            </div>
           </div>
+
+          <div class="recognition-card reveal">
+            <span class="recognition-icon" aria-hidden="true">⭐</span>
+            <div class="recognition-text">
+              <h3 data-en="Readers' Favorite Annual Book Award Contest — 5 stars"
+                  data-it="Readers' Favorite Annual Book Award Contest — 5 stelle">
+                Readers' Favorite Annual Book Award Contest — 5 stars
+              </h3>
+              <p data-en="Lines in Art received a 5-star review from the Readers' Favorite Annual Book Award Contest before its Kickstarter launch."
+                 data-it="Lines in Art ha ricevuto una recensione di 5 stelle dal Readers' Favorite Annual Book Award Contest prima del lancio su Kickstarter.">
+                Lines in Art received a 5-star review from the Readers' Favorite Annual Book Award Contest before its Kickstarter launch.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
