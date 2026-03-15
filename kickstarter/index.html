@@ -1152,8 +1152,10 @@
         <a href="mailto:hello@linesinart.com">hello@linesinart.com</a>
         <span class="footer-sep" aria-hidden="true">·</span>
         <a href="https://linesinart.com/press" target="_blank" rel="noopener">Press</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="https://linesinart.com/about/">About the book</a>
       </nav>
-      <p class="footer-copy">© 2025 Little Oaknut · Made with care in San Francisco</p>
+      <p class="footer-copy">© <span id="footer-year"></span> Little Oaknut · Made with care in San Francisco</p>
     </div>
   </footer>
 
@@ -1161,6 +1163,7 @@
        INLINE JS — language switch + scroll reveal
   ══════════════════════════════════════════════════════════════════ -->
   <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
     // ── Language switching ──────────────────────────────────────────
     function setLanguage(lang) {
       // Update all text elements
