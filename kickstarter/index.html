@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Lines in Art — Back us on Kickstarter</title>
+  <meta name="description" content="A children's picture book for looking at real masterpieces. Back Lines in Art on Kickstarter — for ages 3 to 8.">
+  <meta property="og:title" content="Lines in Art — Back us on Kickstarter">
+  <meta property="og:description" content="A playful way to slow down, notice details, and connect with your children through art — for ages 3 to 8.">
+  <meta property="og:image" content="assets/cover.jpg">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── Custom Properties ─────────────────────────────────────────── */
+    :root {
+      --lia-blue:   #4356A6;
+      --lia-orange: #FF8F00;
+      --lia-yellow: #FFBD05;
+      --lia-green:  #568203;
+      --lia-white:  #FDFAF4;
+      --lia-cream:  #FDF6E3;
+      --lia-text:   #1A1A2E;
+      --lia-muted:  #5A5F7A;
+    }
+
+    /* ─── Reset & Base ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--lia-text);
+      background: var(--lia-white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; height: auto; }
+
+    a { color: var(--lia-blue); }
+    a:focus-visible { outline: 2px solid var(--lia-blue); outline-offset: 3px; border-radius: 2px; }
+
+    /* ─── Scroll Reveal ─────────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 500ms ease, transform 500ms ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+
+    /* ─── Language Toggle ───────────────────────────────────────────── */
+    .lang-toggle {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      background: rgba(253, 246, 227, 0.92);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(67, 86, 166, 0.18);
+      border-radius: 20px;
+      padding: 6px 14px;
+    }
+    .lang-toggle button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--lia-muted);
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: 400;
+      letter-spacing: inherit;
+      padding: 0 4px;
+      line-height: 1;
+      transition: color 180ms ease;
+    }
+    .lang-toggle button:hover { color: var(--lia-blue); }
+    .lang-toggle button.active {
+      color: var(--lia-blue);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .lang-toggle button:focus-visible { outline: 2px solid var(--lia-blue); outline-offset: 2px; border-radius: 2px; }
+    .lang-sep { color: var(--lia-muted); opacity: 0.5; }
+
+    /* ─── Typography Helpers ────────────────────────────────────────── */
+    .section-label {
+      display: block;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--lia-blue);
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--lia-blue);
+      font-size: 38px;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--lia-text);
+      font-size: 30px;
+    }
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+    p { line-height: 1.7; }
+
+    /* ─── Divider ───────────────────────────────────────────────────── */
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(26, 26, 46, 0.15);
+      margin: 0;
+    }
+
+    /* ─── Buttons ───────────────────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      font-family: 'Instrument Sans', sans-serif;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+      line-height: 1;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:focus-visible { outline: 2px solid var(--lia-blue); outline-offset: 3px; }
+
+    .btn-primary {
+      background: var(--lia-blue);
+      color: #fff;
+      font-size: 17px;
+      padding: 15px 28px;
+      border: 2px solid var(--lia-blue);
+    }
+    .btn-primary:hover { box-shadow: 0 4px 16px rgba(67, 86, 166, 0.22); }
+
+    .btn-outline-blue {
+      background: transparent;
+      color: var(--lia-blue);
+      font-size: 15px;
+      padding: 12px 22px;
+      border: 2px solid var(--lia-blue);
+    }
+    .btn-outline-blue:hover { box-shadow: 0 4px 12px rgba(67, 86, 166, 0.15); }
+
+    .btn-outline-green {
+      background: transparent;
+      color: var(--lia-green);
+      font-size: 15px;
+      padding: 12px 22px;
+      border: 2px solid var(--lia-green);
+    }
+    .btn-outline-green:hover { box-shadow: 0 4px 12px rgba(86, 130, 3, 0.15); }
+
+    .btn-filled-blue {
+      background: var(--lia-blue);
+      color: #fff;
+      font-size: 16px;
+      padding: 14px 26px;
+      border: 2px solid var(--lia-blue);
+    }
+    .btn-filled-blue:hover { box-shadow: 0 4px 16px rgba(67, 86, 166, 0.28); }
+
+    .btn-large {
+      font-size: 18px;
+      padding: 17px 36px;
+    }
+
+    /* ─── Section Wrapper ───────────────────────────────────────────── */
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ══════════════════════════════════════════════════════════════════
+       SECTION 1 — HERO
+    ══════════════════════════════════════════════════════════════════ */
+    #hero {
+      background: var(--lia-cream);
+      padding: 80px 0 72px;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-text { width: 100%; }
+    .hero-image { width: 100%; max-width: 360px; }
+
+    .hero-eyebrow {
+      display: block;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--lia-blue);
+      margin-bottom: 20px;
+    }
+    #hero h1 {
+      font-size: 38px;
+      margin-bottom: 16px;
+    }
+    .hero-subhead {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--lia-blue);
+      line-height: 1.35;
+      margin-bottom: 20px;
+    }
+    .hero-body {
+      font-size: 17px;
+      color: var(--lia-muted);
+      margin-bottom: 32px;
+      max-width: 480px;
+    }
+    .hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .hero-link-secondary {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 15px;
+      color: var(--lia-blue);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .hero-link-secondary:hover { opacity: 0.75; }
+
+    .hero-image-wrap { position: relative; }
+    .hero-image-wrap img {
+      width: 100%;
+      height: auto;
+    }
+    .hero-image-caption {
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--lia-muted);
+      text-align: center;
+      font-family: 'Instrument Sans', sans-serif;
+    }
+
+    /* Cover placeholder */
+    .cover-placeholder {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: var(--lia-white);
+      border: 1px dashed rgba(67, 86, 166, 0.30);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--lia-muted);
+      font-size: 14px;
+      font-family: 'Instrument Sans', sans-serif;
+    }
+
+    @media (min-width: 640px) {
+      #hero h1 { font-size: 48px; }
+    }
+    @media (min-width: 1024px) {
+      .hero-inner {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 80px;
+      }
+      .hero-text { flex: 1 1 auto; }
+      .hero-image { flex: 0 0 380px; width: 380px; max-width: none; }
+      #hero h1 { font-size: 56px; }
+    }
+
+    /* ══════════════════════════════════════════════════════════════════
+       SECTION 3 — HOW KICKSTARTER WORKS
+    ══════════════════════════════════════════════════════════════════ */
+    #how-it-works {
+      background: var(--lia-blue);
+      padding: 80px 0;
+    }
+    #how-it-works .section-label {
+      color: rgba(255,255,255,0.60);
+    }
+    #how-it-works h2 {
+      color: #fff;
+      font-size: 30px;
+      margin-bottom: 52px;
+    }
+
+    .steps-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .step-number {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid var(--lia-yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--lia-yellow);
+      flex-shrink: 0;
+    }
+    .step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.15;
+    }
+    .step-body {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 16px;
+      color: rgba(255,255,255,0.80);
+      line-height: 1.7;
+    }
+
+    .steps-reassurance {
+      margin-top: 52px;
+      text-align: center;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 14px;
+      color: rgba(255,255,255,0.60);
+      line-height: 1.7;
+    }
+
+    @media (min-width: 640px) {
+      #how-it-works h2 { font-size: 34px; }
+    }
+    @media (min-width: 1024px) {
+      #how-it-works h2 { font-size: 38px; }
+      .steps-grid {
+        flex-direction: row;
+        gap: 0;
+      }
+      .step {
+        flex: 1 1 0;
+        padding-right: 48px;
+        border-right: 1px solid rgba(255,255,255,0.12);
+        padding-left: 0;
+      }
+      .step:last-child { border-right: none; padding-right: 0; }
+      .step + .step { padding-left: 48px; }
+    }
+
+    /* ══════════════════════════════════════════════════════════════════
+       SECTION 4 — REWARDS
+    ══════════════════════════════════════════════════════════════════ */
+    #rewards {
+      background: var(--lia-cream);
+      padding: 80px 0;
+    }
+    .rewards-header {
+      margin-bottom: 52px;
+    }
+    #rewards h2 {
+      color: var(--lia-text);
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+    .rewards-subtext {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 17px;
+      color: var(--lia-muted);
+      line-height: 1.5;
+    }
+
+    /* Cards grid */
+    .cards-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+
+    /* Most popular wrapper (for Tier 2 badge above card) */
+    .card-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .most-popular-badge {
+      display: inline-block;
+      align-self: center;
+      margin-bottom: -1px;
+      position: relative;
+      z-index: 1;
+      background: var(--lia-blue);
+      color: var(--lia-yellow);
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px 20px 0 0;
+    }
+    .most-popular-badge.badge-green {
+      background: var(--lia-green);
+      color: #fff;
+    }
+
+    /* Card tier image */
+    .card-image-wrap {
+      margin: -28px -28px 24px -28px;
+      border-radius: 4px 4px 0 0;
+      overflow: hidden;
+    }
+    .hero-card .card-image-wrap {
+      margin: -32px -28px 24px -28px;
+    }
+    .card-tier-image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .reward-card {
+      background: var(--lia-white);
+      border: 1px solid rgba(26, 26, 46, 0.10);
+      border-radius: 4px;
+      padding: 28px 28px 32px;
+      position: relative;
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+    .reward-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(26, 26, 46, 0.10);
+    }
+    .reward-card.hero-card {
+      border: 2px solid var(--lia-blue);
+      padding: 32px 28px 36px;
+    }
+
+    .card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--lia-text);
+      margin-bottom: 4px;
+      line-height: 1.15;
+    }
+    .card-tagline {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 15px;
+      color: var(--lia-muted);
+      margin-bottom: 20px;
+    }
+
+    .card-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .card-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--lia-blue);
+      line-height: 1;
+    }
+    .card-orig-price {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 15px;
+      color: var(--lia-muted);
+      text-decoration: line-through;
+    }
+    .card-scarcity {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 13px;
+      color: var(--lia-orange);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .card-includes {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+    .card-includes li {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 15px;
+      color: var(--lia-text);
+      line-height: 1.6;
+      padding: 5px 0;
+      padding-left: 22px;
+      position: relative;
+      border-top: 1px solid rgba(26, 26, 46, 0.07);
+    }
+    .card-includes li:first-child { border-top: none; }
+    .card-includes li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--lia-green);
+      font-weight: 700;
+    }
+
+    .card-cta { width: 100%; text-align: center; }
+
+    /* Login notice */
+    .login-notice {
+      background: #EEF1F9;
+      border-left: 3px solid var(--lia-blue);
+      padding: 20px 24px;
+      border-radius: 0 4px 4px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .login-notice-icon {
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .login-notice-text {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 15px;
+      color: var(--lia-text);
+      line-height: 1.65;
+    }
+
+    .see-all-link {
+      display: inline-block;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 15px;
+      color: var(--lia-blue);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .see-all-link:hover { opacity: 0.75; }
+
+    @media (min-width: 640px) {
+      #rewards h2 { font-size: 34px; }
+    }
+    @media (min-width: 1024px) {
+      #rewards h2 { font-size: 38px; }
+      .cards-grid {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      .card-wrapper { flex: 1 1 0; }
+    }
+
+    /* ══════════════════════════════════════════════════════════════════
+       SECTION 6 — FINAL CTA
+    ══════════════════════════════════════════════════════════════════ */
+    #final-cta {
+      background: var(--lia-cream);
+      padding: 100px 0;
+      text-align: center;
+    }
+    .final-cta-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    #final-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--lia-blue);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .final-cta-body {
+      font-size: 17px;
+      color: var(--lia-muted);
+      max-width: 480px;
+      margin: 0 auto 32px;
+    }
+    .final-cta-sub {
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--lia-muted);
+      font-family: 'Instrument Sans', sans-serif;
+    }
+
+    @media (min-width: 640px) {
+      #final-cta h2 { font-size: 36px; }
+    }
+    @media (min-width: 1024px) {
+      #final-cta h2 { font-size: 40px; }
+    }
+
+    /* ══════════════════════════════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════════════════════════════ */
+    footer {
+      background: var(--lia-blue);
+      padding: 48px 0;
+      text-align: center;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: 18px;
+      letter-spacing: 0.04em;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 20px;
+      margin-bottom: 20px;
+    }
+    .footer-links a {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 14px;
+      color: rgba(255,255,255,0.70);
+      text-decoration: none;
+      transition: color 180ms ease;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-links a:focus-visible { outline-color: rgba(255,255,255,0.80); }
+    .footer-sep {
+      color: rgba(255,255,255,0.30);
+    }
+    .footer-copy {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Language Toggle ──────────────────────────────────────────── -->
+  <nav class="lang-toggle" aria-label="Language selection">
+    <button id="btn-en" class="active" aria-label="Switch to English" onclick="switchLang('en')">EN</button>
+    <span class="lang-sep" aria-hidden="true">|</span>
+    <button id="btn-it" aria-label="Passa all'italiano" onclick="switchLang('it')">IT</button>
+  </nav>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         SECTION 1 — HERO
+    ══════════════════════════════════════════════════════════════════ -->
+    <section id="hero" aria-label="Hero">
+      <div class="hero-inner">
+
+        <div class="hero-text">
+          <span class="hero-eyebrow"
+            data-en="Now live on Kickstarter"
+            data-it="Ora su Kickstarter">Now live on Kickstarter</span>
+
+          <h1>Lines in Art</h1>
+
+          <p class="hero-subhead"
+            data-en="A children's picture book for looking at real masterpieces"
+            data-it="Un libro illustrato per bambini per scoprire i grandi capolavori">
+            A children's picture book for looking at real masterpieces
+          </p>
+
+          <p class="hero-body"
+            data-en="A playful way to slow down, notice details, and connect with your children through art — for ages 3 to 8."
+            data-it="Un modo giocoso per rallentare, osservare i dettagli e connettersi con i propri figli attraverso l'arte — per bambini dai 3 agli 8 anni.">
+            A playful way to slow down, notice details, and connect with your children through art — for ages 3 to 8.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#rewards" class="btn btn-primary"
+              data-en="See the rewards ↓"
+              data-it="Scopri le ricompense ↓">See the rewards ↓</a>
+
+            <a href="https://www.kickstarter.com/projects/littleoaknut/lines-in-art"
+              target="_blank" rel="noopener"
+              class="hero-link-secondary"
+              data-en="View the full Kickstarter campaign →"
+              data-it="Vai alla campagna Kickstarter →">
+              View the full Kickstarter campaign →
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <div class="hero-image-wrap">
+            <img src="assets/cover-hero.png"
+              width="480" height="480"
+              loading="eager"
+              data-alt-en="Lines in Art book cover"
+              data-alt-it="Copertina del libro Lines in Art"
+              alt="Lines in Art book cover"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <!-- Cover placeholder shown if image missing -->
+            <div class="cover-placeholder" style="display:none;" aria-hidden="true">
+              assets/cover.jpg
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         SECTION 3 — HOW KICKSTARTER WORKS
+    ══════════════════════════════════════════════════════════════════ -->
+    <section id="how-it-works" aria-label="How Kickstarter works">
+      <div class="section-inner">
+
+        <div class="reveal">
+          <span class="section-label"
+            data-en="New to Kickstarter?"
+            data-it="Non conosci Kickstarter?">New to Kickstarter?</span>
+          <h2
+            data-en="Here's exactly how it works"
+            data-it="Ecco come funziona, passo per passo">
+            Here's exactly how it works
+          </h2>
+        </div>
+
+        <div class="steps-grid">
+
+          <div class="step reveal">
+            <div class="step-number" aria-hidden="true">1</div>
+            <h3 class="step-title"
+              data-en="Choose a reward below"
+              data-it="Scegli la tua ricompensa">Choose a reward below</h3>
+            <p class="step-body"
+              data-en="Pick the option that's right for you and click the button. You'll go directly to that reward on Kickstarter."
+              data-it="Scegli l'opzione più adatta a te e clicca il pulsante. Arriverai direttamente a quella ricompensa su Kickstarter.">
+              Pick the option that's right for you and click the button. You'll go directly to that reward on Kickstarter.
+            </p>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-number" aria-hidden="true">2</div>
+            <h3 class="step-title"
+              data-en="Create a free account (60 seconds)"
+              data-it="Crea un account gratuito (60 secondi)">Create a free account (60 seconds)</h3>
+            <p class="step-body"
+              data-en="Kickstarter will ask you to sign in. It's completely free. Your card is NOT charged until the campaign ends — and only if we reach our goal."
+              data-it="Kickstarter ti chiederà di accedere. È completamente gratuito. La tua carta NON viene addebitata fino alla fine della campagna — e solo se raggiungiamo il nostro obiettivo.">
+              Kickstarter will ask you to sign in. It's completely free. Your card is NOT charged until the campaign ends — and only if we reach our goal.
+            </p>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-number" aria-hidden="true">3</div>
+            <h3 class="step-title"
+              data-en="We print and ship to you"
+              data-it="Stampiamo e ti spediamo il libro">We print and ship to you</h3>
+            <!-- July 2026 -->
+            <p class="step-body"
+              data-en="Once funded, we go to print. Books ship in July 2026. You'll receive email updates every step of the way."
+              data-it="Una volta finanziati, andiamo in stampa. I libri vengono spediti a Luglio 2026. Riceverai aggiornamenti via email.">
+              Once funded, we go to print. Books ship in July 2026. You'll receive email updates every step of the way.
+            </p>
+          </div>
+
+        </div>
+
+        <p class="steps-reassurance"
+          data-en="You can change your pledge at any time before the campaign closes. If we don't reach our goal, you owe nothing."
+          data-it="Puoi modificare il tuo sostegno in qualsiasi momento prima della fine della campagna. Se non raggiungiamo l'obiettivo, non ti verrà addebitato nulla.">
+          You can change your pledge at any time before the campaign closes. If we don't reach our goal, you owe nothing.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         SECTION 4 — REWARDS
+    ══════════════════════════════════════════════════════════════════ -->
+    <section id="rewards" aria-label="Rewards">
+      <div class="section-inner">
+
+        <div class="rewards-header reveal">
+          <span class="section-label"
+            data-en="Choose your reward"
+            data-it="Scegli la tua ricompensa">Choose your reward</span>
+          <h2
+            data-en="Three options. All Kickstarter-exclusive pricing."
+            data-it="Tre opzioni. Prezzi esclusivi per la campagna.">
+            Three options. All Kickstarter-exclusive pricing.
+          </h2>
+          <p class="rewards-subtext"
+            data-en="These links take you directly to the discounted price. More options are available on the full Kickstarter page."
+            data-it="Questi link portano direttamente al prezzo scontato. Altre opzioni sono disponibili sulla pagina Kickstarter.">
+            These links take you directly to the discounted price. More options are available on the full Kickstarter page.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+
+          <!-- TIER 1 — One Book -->
+          <div class="card-wrapper reveal">
+            <span class="most-popular-badge" aria-hidden="true" style="visibility:hidden;">placeholder</span>
+            <div class="reward-card">
+              <div class="card-image-wrap">
+                <img src="assets/cover.jpg"
+                  class="card-tier-image"
+                  loading="lazy"
+                  width="480" height="270"
+                  data-alt-en="Lines in Art — one hardcover book"
+                  data-alt-it="Lines in Art — un libro con copertina rigida"
+                  alt="Lines in Art — one hardcover book"
+                  onerror="this.parentElement.style.display='none';">
+              </div>
+              <h3 class="card-name"
+                data-en="One Book"
+                data-it="Un libro">One Book</h3>
+              <p class="card-tagline"
+                data-en="A single hardcover copy"
+                data-it="Una copia con copertina rigida"
+                >A single hardcover copy</p>
+
+              <!-- $27 --> <!-- $30 -->
+              <div class="card-price-row">
+                <span class="card-price">$27</span>
+                <span class="card-orig-price">$30</span>
+              </div>
+
+              <ul class="card-includes">
+                <li data-en="1 hardcover copy"
+                    data-it="1 copia con copertina rigida">1 hardcover copy</li>
+                <li data-en="Companion digital activity sheet (PDF)"
+                    data-it="Scheda attività digitale (PDF)">Companion digital activity sheet (PDF)</li>
+              </ul>
+
+              <a href="https://www.kickstarter.com/projects/littleoaknut/lines-in-art/rewards#reward-UmV3YXJkLVVtVjNZWEprTFRFd056YzNOVGcy"
+                target="_blank" rel="noopener"
+                class="btn btn-outline-blue card-cta"
+                data-en="Back this reward →"
+                data-it="Sostieni questa ricompensa →">Back this reward →</a>
+            </div>
+          </div>
+
+          <!-- TIER 2 — Three Books (HERO CARD) -->
+          <div class="card-wrapper reveal">
+            <span class="most-popular-badge"
+              data-en="Most popular"
+              data-it="Il più scelto">Most popular</span>
+            <div class="reward-card hero-card">
+              <div class="card-image-wrap">
+                <img src="assets/tier2-3books.jpg"
+                  class="card-tier-image"
+                  loading="lazy"
+                  width="480" height="270"
+                  data-alt-en="Lines in Art — three hardcover books"
+                  data-alt-it="Lines in Art — tre libri con copertina rigida"
+                  alt="Lines in Art — three hardcover books"
+                  onerror="this.parentElement.style.display='none';">
+              </div>
+              <h3 class="card-name"
+                data-en="Three Books"
+                data-it="Tre libri">Three Books</h3>
+              <p class="card-tagline"
+                data-en="Best value • perfect for gifting"
+                data-it="Il miglior rapporto qualità-prezzo • ideale come regalo">Best value • perfect for gifting</p>
+
+              <!-- $59 --> <!-- $90 -->
+              <div class="card-price-row">
+                <span class="card-price">$59</span>
+                <span class="card-orig-price">$90</span>
+              </div>
+              <p class="card-scarcity"
+                data-en="Only a few left at this price"
+                data-it="Ultimi disponibili a questo prezzo">Only a few left at this price</p>
+
+              <ul class="card-includes">
+                <li data-en="3 hardcover copies"
+                    data-it="3 copie con copertina rigida">3 hardcover copies</li>
+                <li data-en="All 3 shipped together"
+                    data-it="Tutte le copie spedite insieme">All 3 shipped together</li>
+                <li data-en="Companion digital activity sheet (PDF)"
+                    data-it="Scheda attività digitale (PDF)">Companion digital activity sheet (PDF)</li>
+              </ul>
+
+              <a href="https://www.kickstarter.com/projects/littleoaknut/lines-in-art/rewards#reward-UmV3YXJkLVVtVjNZWEprTFRFeE1EY3lOVEUy"
+                target="_blank" rel="noopener"
+                class="btn btn-filled-blue card-cta"
+                data-en="Back this reward →"
+                data-it="Sostieni questa ricompensa →">Back this reward →</a>
+            </div>
+          </div>
+
+          <!-- TIER 3 — Five Books -->
+          <div class="card-wrapper reveal">
+            <span class="most-popular-badge badge-green"
+              data-en="Best saving"
+              data-it="Massimo risparmio">Best saving</span>
+            <div class="reward-card">
+              <div class="card-image-wrap">
+                <img src="assets/tier3-5books.jpg"
+                  class="card-tier-image"
+                  loading="lazy"
+                  width="480" height="270"
+                  data-alt-en="Lines in Art — five hardcover books"
+                  data-alt-it="Lines in Art — cinque libri con copertina rigida"
+                  alt="Lines in Art — five hardcover books"
+                  onerror="this.parentElement.style.display='none';">
+              </div>
+              <h3 class="card-name"
+                data-en="Five Books"
+                data-it="Cinque libri">Five Books</h3>
+              <p class="card-tagline"
+                data-en="Super early bird • best for gifting"
+                data-it="Super early bird • ideale come regalo multiplo">Super early bird • best for gifting</p>
+
+              <!-- $89 --> <!-- $150 -->
+              <div class="card-price-row">
+                <span class="card-price">$89</span>
+                <span class="card-orig-price">$150</span>
+              </div>
+
+              <ul class="card-includes">
+                <li data-en="5 hardcover copies"
+                    data-it="5 copie con copertina rigida">5 hardcover copies</li>
+                <li data-en="All 5 shipped together"
+                    data-it="Tutte le copie spedite insieme">All 5 shipped together</li>
+                <li data-en="Companion digital activity sheet (PDF)"
+                    data-it="Scheda attività digitale (PDF)">Companion digital activity sheet (PDF)</li>
+              </ul>
+
+              <a href="https://www.kickstarter.com/projects/littleoaknut/lines-in-art/rewards#reward-UmV3YXJkLVVtVjNZWEprTFRFeE1EY3lOVEU1"
+                target="_blank" rel="noopener"
+                class="btn btn-outline-blue card-cta"
+                data-en="Back this reward →"
+                data-it="Sostieni questa ricompensa →">Back this reward →</a>
+            </div>
+          </div>
+
+        </div><!-- /cards-grid -->
+
+        <!-- Login notice -->
+        <div class="login-notice" role="note">
+          <span class="login-notice-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="10" r="9" stroke="#4356A6" stroke-width="1.5"/>
+              <path d="M10 9v5" stroke="#4356A6" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="10" cy="6.5" r="0.75" fill="#4356A6"/>
+            </svg>
+          </span>
+          <p class="login-notice-text"
+            data-en="When you click a button above, you'll be taken to Kickstarter where you'll be asked to log in or create a free account. This is completely normal — Kickstarter requires an account to process pledges. It takes about 60 seconds and is free."
+            data-it="Quando clicchi uno dei pulsanti, verrai reindirizzato a Kickstarter dove ti verrà chiesto di accedere o creare un account gratuito. È assolutamente normale — Kickstarter richiede un account per elaborare i pledges. Ci vogliono circa 60 secondi ed è gratuito.">
+            When you click a button above, you'll be taken to Kickstarter where you'll be asked to log in or create a free account. This is completely normal — Kickstarter requires an account to process pledges. It takes about 60 seconds and is free.
+          </p>
+        </div>
+
+        <a href="https://www.kickstarter.com/projects/littleoaknut/lines-in-art"
+          target="_blank" rel="noopener"
+          class="see-all-link"
+          data-en="See all reward options on Kickstarter →"
+          data-it="Vedi tutte le opzioni su Kickstarter →">
+          See all reward options on Kickstarter →
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         SECTION 6 — FINAL CTA
+    ══════════════════════════════════════════════════════════════════ -->
+    <section id="final-cta" aria-label="Final call to action">
+      <div class="final-cta-inner reveal">
+        <h2
+          data-en="Help bring Lines in Art into the world"
+          data-it="Aiutaci a portare Lines in Art nel mondo">
+          Help bring Lines in Art into the world
+        </h2>
+        <p class="final-cta-body"
+          data-en="Every pledge brings us one step closer to print — and every child who opens this book gets a new way to see the world."
+          data-it="Ogni sostegno ci avvicina alla stampa — e ogni bambino che aprirà questo libro avrà un nuovo modo di guardare il mondo.">
+          Every pledge brings us one step closer to print — and every child who opens this book gets a new way to see the world.
+        </p>
+        <a href="#rewards" class="btn btn-primary btn-large"
+          data-en="Choose your reward →"
+          data-it="Scegli la tua ricompensa →">Choose your reward →</a>
+        <p class="final-cta-sub"
+          data-en="Campaign live now · Limited early pricing"
+          data-it="Campagna attiva ora · Prezzi early bird limitati">
+          Campaign live now · Limited early pricing
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-brand">Little Oaknut</p>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="https://linesinart.com" target="_blank" rel="noopener">linesinart.com</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="https://www.kickstarter.com/projects/littleoaknut/lines-in-art" target="_blank" rel="noopener">Kickstarter campaign</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="https://www.instagram.com/linesinartbook" target="_blank" rel="noopener">@linesinartbook</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="mailto:hello@linesinart.com">hello@linesinart.com</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="https://linesinart.com/press" target="_blank" rel="noopener">Press</a>
+      </nav>
+      <p class="footer-copy">© 2025 Little Oaknut · Made with care in San Francisco</p>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       INLINE JS — language switch + scroll reveal
+  ══════════════════════════════════════════════════════════════════ -->
+  <script>
+    // ── Language switching ──────────────────────────────────────────
+    function setLanguage(lang) {
+      // Update all text elements
+      document.querySelectorAll('[data-en]').forEach(function(el) {
+        if (el.dataset[lang]) {
+          el.textContent = el.dataset[lang];
+        }
+      });
+      // Update img alt attributes
+      document.querySelectorAll('[data-alt-en]').forEach(function(img) {
+        var altKey = 'alt' + lang.charAt(0).toUpperCase() + lang.slice(1);
+        if (img.dataset[altKey]) {
+          img.setAttribute('alt', img.dataset[altKey]);
+        }
+      });
+      // Update toggle button states
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-it').classList.toggle('active', lang === 'it');
+      // Update html lang attribute
+      document.documentElement.setAttribute('lang', lang);
+      // Update page title
+      var titles = { en: 'Lines in Art — Back us on Kickstarter', it: 'Lines in Art — Sostienici su Kickstarter' };
+      document.title = titles[lang] || titles.en;
+    }
+
+    function switchLang(lang) {
+      localStorage.setItem('lia-lang', lang);
+      setLanguage(lang);
+    }
+
+    // ── Language detection on load ──────────────────────────────────
+    (function() {
+      var saved = localStorage.getItem('lia-lang');
+      var browser = navigator.language && navigator.language.startsWith('it') ? 'it' : 'en';
+      var lang = saved || browser;
+      setLanguage(lang);
+    })();
+
+    // ── Scroll reveal via IntersectionObserver ──────────────────────
+    (function() {
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return;
+
+      var elements = document.querySelectorAll('.reveal');
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            // Stagger siblings inside the same parent
+            var siblings = entry.target.parentElement.querySelectorAll('.reveal:not(.visible)');
+            var delay = 0;
+            siblings.forEach(function(sib) {
+              if (sib === entry.target || !sib.classList.contains('visible')) {
+                // only stagger immediate reveal targets in view
+              }
+            });
+            // Apply stagger based on index among reveal siblings
+            var allReveals = Array.from(entry.target.parentElement.querySelectorAll('.reveal'));
+            var idx = allReveals.indexOf(entry.target);
+            entry.target.style.transitionDelay = (idx * 80) + 'ms';
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      elements.forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+  </script>
+
+</body>
+</html>
