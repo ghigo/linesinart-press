@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+Disallow: /kickstarter/assets/raw/
+
+# AI crawlers — explicitly welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Gemini
+Allow: /
+
+Sitemap: https://linesinart.com/sitemap.xml

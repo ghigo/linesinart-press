@@ -61,19 +61,38 @@
         "description": "A children's picture book for looking at real masterpieces. Back Lines in Art on Kickstarter — for ages 3 to 8.",
         "isPartOf": { "@id": "https://linesinart.com/#website" },
         "about": { "@id": "https://linesinart.com/#book" },
-        "inLanguage": ["en", "it"]
+        "inLanguage": ["en", "it"],
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".hero-subhead", ".hero-body"]
+        }
       },
       {
         "@type": "Book",
         "@id": "https://linesinart.com/#book",
         "name": "Lines in Art",
         "publisher": { "@id": "https://linesinart.com/#org" },
+        "bookFormat": "https://schema.org/Hardcover",
+        "numberOfPages": 40,
         "inLanguage": "en",
+        "datePublished": "2026-07-01",
         "audience": {
           "@type": "Audience",
-          "audienceType": "Families and educators"
+          "audienceType": "Families and educators",
+          "suggestedMinAge": 3,
+          "suggestedMaxAge": 8
         },
-        "about": "A children's picture book that helps kids learn to look at real art through observation and play."
+        "about": "A children's picture book that teaches kids to observe and engage with real art masterpieces through play and guided looking. For ages 3 to 8.",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.kickstarter.com/projects/littleoaknut/lines-in-art",
+          "price": "27.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/PreOrder",
+          "validFrom": "2026-03-12",
+          "validThrough": "2026-04-12",
+          "seller": { "@id": "https://linesinart.com/#org" }
+        }
       }
     ]
   }
